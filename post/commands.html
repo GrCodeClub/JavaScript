@@ -1,0 +1,164 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta property="og:image" content="https://grcodeclub.github.io/file/background/5.png"/>
+        <meta property="og:title" content="JavaScript | Εντολές">
+        <script src="https://grcodeclub.github.io/javascript/jquery.js"></script>
+        <script src="https://grcodeclub.github.io/website/menu.js"></script>
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/header_and_footer.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/main.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/text.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/table.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/layout2.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/list.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/body.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/code_bg.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/prism.css" />
+        <script src="https://grcodeclub.github.io/javascript/prism.js"></script>
+        <link rel='icon' type='image/png' href='https://grcodeclub.github.io/file/logo/black_logo.png'>
+        <title> GrCode Club</title>
+    </head>
+
+    <body class="website">
+        <div class="container">
+            <section class="show_desktop"> <!--Αρχή Εμφάνιση Υπολογιστή-->
+                <div class="Header"> <!--Αρχή Επικεφαλίδας-->
+                    <table>
+                        <tr>
+                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
+                            <td><h1 class="header_text"><span class="header_text">  GrCode Club </span></h1></td>
+                            <td><a href="https://github.com/GrCodeClub/website/edit/main/javascript/commands.html" target="_blank"><img src="https://grcodeclub.github.io/file/logo_and_graphic/edit.png"  width="60px"></a></td>
+                        </tr>
+                    </table> 
+                </div> <!--Τέλος Επικεφαλίδας-->
+           
+                <div class="Menu"> <!--Αρχή Menu-->
+                    <div id="sidebarMenu" style="  overflow: auto;">
+                        <ul class="sidebarMenuInner"></ul>
+                    </div>
+                </div><!--Τέλος Menu-->
+
+            </section> <!--Τέλος Εμφάνιση Υπολογιστή-->
+
+            <section class="show_mobile">  <!--Αρχή εμφάνιση σε κινητά-->
+                <div class="Header"> <!--Αρχή Επικεφαλίδας σε κινητά-->
+                    <table>
+                        <tr>
+                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
+                            <td><h1 class="header_text"><span class="header_text">  GrCode Club </span></h1></td>
+                        </tr>
+                    </table> 
+                </div> <!--Τέλος Επικεφαλίδας σε κινητά -->
+                <table>  <!--Αρχή Menu σε κινητά-->
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+                            <label for="openSidebarMenu" class="sidebarIconToggle">
+                                <div class="spinner diagonal part-1"></div>
+                                <div class="spinner horizontal"></div>
+                                <div class="spinner diagonal part-2"></div>
+                            </label>
+                            <div id="sidebarMenu">
+                                <ul class="sidebarMenuInner"></ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table> <!--Τέλος Menu σε κινητά-->
+            </section> <!--Τέλος εμφάνιση σε κινητά-->
+
+            <div class="Text"> <!--Αρχή Κειμένου-->
+                <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
+                    <h1 class="title">JavaScript Εντολές</h1>
+                 <p>Εκτύπωση μηνυμάτων ή τιμών στο console του προγράμματος περιήγησης.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log("Hello, world!");</code></pre></div></div>
+
+                    <p>let και const: Χρησιμοποιούνται για τον ορισμό μεταβλητών. Οι μεταβλητές που δηλώνονται με let μπορούν να αλλάξουν τιμή, ενώ οι μεταβλητές που δηλώνονται με const είναι σταθερές και δεν μπορούν να αλλάξουν τιμή.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let count = 10;
+const PI = 3.14159;</code></pre></div></div>
+
+
+                    <p>if-else: Χρησιμοποιείται για τον έλεγχο της συνθήκης και την εκτέλεση κώδικα βάσει αυτής της συνθήκης.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let age = 18;
+if (age >= 18) {
+    console.log("Είστε ενήλικας.");
+} else {
+    console.log("Είστε ανήλικος.");
+}</code></pre></div></div>
+
+
+                    <p>for loop: Χρησιμοποιείται για την επανάληψη κώδικα συγκεκριμένο αριθμό φορών.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre></div></div>
+
+                    <p>while loop: Χρησιμοποιείται για την επανάληψη κώδικα όσο μια συνθήκη είναι αληθής.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let num = 0;
+while (num < 5) {
+    console.log(num);
+    num++;
+}</code></pre></div></div>
+
+
+                    <p>function: Χρησιμοποιείται για τον ορισμό και την κλήση συναρτήσεων.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">function greet(name) {
+    console.log(`Καλημέρα, ${name}!`);
+}
+greet("ΓΙΩΡΓΟΣ");</code></pre></div></div>
+
+
+                    <p>Array: Χρησιμοποιείται για τη δημιουργία και διαχείριση πινάκων.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let colors = ["Κόκκινο", "Πράσινο", "Μπλε"];
+console.log(colors[0]); // Κόκκινο</code></pre></div></div>
+
+
+                    <p>Object: Χρησιμοποιείται για τη δημιουργία και διαχείριση αντικειμένων με ιδιότητες.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let person = {
+    firstName: "Γιάννης",
+    age: 30
+};
+
+let onoma = person.firstName;
+let ilikia = person.age;
+
+console.log(onoma); // Γιάννης
+console.log(ilikia); // 30</code></pre></div></div>
+
+
+                    <p>Promises: Χρησιμοποιούνται για τη διαχείριση ασύγχρονων εργασιών και την αντιμετώπιση των αποτελεσμάτων τους.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const fetchData = new Promise((resolve, reject) => {
+    // Κώδικας για τη λήψη δεδομένων από κάποια πηγή
+    if (dataReceived) {
+        resolve(data);
+    } else {
+        reject("Αποτυχία λήψης δεδομένων");
+    }
+});
+
+fetchData.then(data => {
+    console.log(data);
+}).catch(error => {
+    console.error(error);
+});</code></pre></div></div>
+
+                </div><!-- Τέλος Background Κειμένου-->
+            </div> <!--Τέλος Κειμένου-->
+
+        </div> <!--Τέλος container-->
+        
+        <!-- Footer -->
+        <footer>
+            <table class="add_footer"></table>
+            <script src="https://grcodeclub.github.io/javascript/footer.js"></script>       
+        </footer>
+    </body>
+</html>

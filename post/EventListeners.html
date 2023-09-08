@@ -1,0 +1,137 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta property="og:image" content="https://grcodeclub.github.io/file/background/5.png"/>
+        <meta property="og:title" content="JavaScript | Event Listeners">
+        <script src="https://grcodeclub.github.io/javascript/jquery.js"></script>
+        <script src="https://grcodeclub.github.io/website/menu.js"></script>
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/header_and_footer.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/main.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/text.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/table.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/layout2.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/list.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/body.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/code_bg.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/prism.css" />
+        <script src="https://grcodeclub.github.io/javascript/prism.js"></script>
+        <link rel='icon' type='image/png' href='https://grcodeclub.github.io/file/logo/black_logo.png'>
+        <title> GrCode Club</title>
+    </head>
+
+    <body class="website">
+        <div class="container">
+            <section class="show_desktop"> <!--Αρχή Εμφάνιση Υπολογιστή-->
+                <div class="Header"> <!--Αρχή Επικεφαλίδας-->
+                    <table>
+                        <tr>
+                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
+                            <td><h1 class="header_text"><span class="header_text">  GrCode Club </span></h1></td>
+                            <td><a href="https://github.com/GrCodeClub/website/edit/main/javascript/EventListeners.html" target="_blank"><img src="https://grcodeclub.github.io/file/logo_and_graphic/edit.png"  width="60px"></a></td>
+                        </tr>
+                    </table> 
+                </div> <!--Τέλος Επικεφαλίδας-->
+           
+                <div class="Menu"> <!--Αρχή Menu-->
+                    <div id="sidebarMenu" style="  overflow: auto;">
+                        <ul class="sidebarMenuInner"></ul>
+                    </div>
+                </div><!--Τέλος Menu-->
+
+            </section> <!--Τέλος Εμφάνιση Υπολογιστή-->
+
+            <section class="show_mobile">  <!--Αρχή εμφάνιση σε κινητά-->
+                <div class="Header"> <!--Αρχή Επικεφαλίδας σε κινητά-->
+                    <table>
+                        <tr>
+                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
+                            <td><h1 class="header_text"><span class="header_text">  GrCode Club </span></h1></td>
+                        </tr>
+                    </table> 
+                </div> <!--Τέλος Επικεφαλίδας σε κινητά -->
+                <table>  <!--Αρχή Menu σε κινητά-->
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+                            <label for="openSidebarMenu" class="sidebarIconToggle">
+                                <div class="spinner diagonal part-1"></div>
+                                <div class="spinner horizontal"></div>
+                                <div class="spinner diagonal part-2"></div>
+                            </label>
+                            <div id="sidebarMenu">
+                                <ul class="sidebarMenuInner"></ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table> <!--Τέλος Menu σε κινητά-->
+            </section> <!--Τέλος εμφάνιση σε κινητά-->
+
+            <div class="Text"> <!--Αρχή Κειμένου-->
+                <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
+                    <h1 class="title">JavaScript | Event Listeners</h1>
+                 
+                    <p>Event Listeners: Χρησιμοποιούνται για την παρακολούθηση ενεργειών του χρήστη και την εκτέλεση κώδικα όταν συμβούν αυτές οι ενέργειες.</p>
+                    <hr>
+
+                    <p>Click Event Listener: Εκτελεί κώδικα όταν ο χρήστης κάνει κλικ σε ένα στοιχείο.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myButton = document.getElementById("myButton");
+myButton.addEventListener("click", function() {
+    console.log("Ο χρήστης κάνει κλικ!");
+});</code></pre></div></div>
+
+                    <hr>
+                    <p>Mouseover/Mouseout Event Listeners: Εκτελούν κώδικα όταν ο χρήστης τοποθετεί το ποντίκι πάνω από ένα στοιχείο ή το απομακρύνει.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myElement = document.getElementById("myElement");
+document.getElementById("myElement").addEventListener("mouseover", function() {
+    console.log("Ο χρήστης τοποθετεί το ποντίκι πάνω από το στοιχείο!");
+});
+
+document.getElementById("myElement").addEventListener("mouseout", function() {
+    console.log("Ο χρήστης απομακρύνει το ποντίκι από το στοιχείο!");
+});</code></pre></div></div>
+
+                    <hr>
+                    <p>Input Event Listener: Εκτελεί κώδικα όταν ο χρήστης πληκτρολογεί ή εκτελεί ενέργειες σε ένα input στοιχείο.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myInput = document.getElementById("myInput");
+myInput.addEventListener("input", function() {
+    console.log("Ο χρήστης πληκτρολογεί στο πεδίο εισαγωγής :"+myInput.value);
+});</code></pre></div></div>
+
+                    <hr>
+                    <p>Submit Event Listener: Εκτελεί κώδικα όταν ο χρήστης υποβάλλει ένα φόρμα.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">      const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Αποτρέπει την προεπιλεγμένη συμπεριφορά της υποβολής
+    console.log("Ο χρήστης υπέβαλε τη φόρμα!");
+});</code></pre></div></div>
+
+                    <p>Η μέθοδος event.preventDefault() χρησιμοποιείται για να ακυρώνει την προεπιλεγμένη συμπεριφορά ενός γεγονότος.</p>
+                    <hr>
+
+                    <p>Keydown/Keyup Event Listeners: Εκτελούν κώδικα όταν ο χρήστης πιέζει ή αφήνει ένα πλήκτρο του πληκτρολογίου.</p>
+                    <div class="bg_preview">
+                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript"> document.addEventListener("keydown", function(event) {
+    console.log(`Ο χρήστης πίεσε το πλήκτρο με κωδικό ${event.keyCode}`);
+});
+
+document.addEventListener("keyup", function(event) {
+    console.log(`Ο χρήστης αφήνει το πλήκτρο με κωδικό ${event.keyCode}`);
+});</code></pre></div></div>
+
+                </div><!-- Τέλος Background Κειμένου-->
+            </div> <!--Τέλος Κειμένου-->
+
+        </div> <!--Τέλος container-->
+        
+        <!-- Footer -->
+        <footer>
+            <table class="add_footer"></table>
+            <script src="https://grcodeclub.github.io/javascript/footer.js"></script>       
+        </footer>
+    </body>
+</html>
