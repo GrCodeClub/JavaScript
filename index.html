@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="https://grcodeclub.github.io/css/header_and_footer.css">
         <link rel="stylesheet" href="https://grcodeclub.github.io/css/main.css">
         <link rel="stylesheet" href="https://grcodeclub.github.io/css/text.css">
-        <link rel="stylesheet" href="https://grcodeclub.github.io/css/table.css">
-        <link rel="stylesheet" href="https://grcodeclub.github.io/css/layout2.css">
+        <link rel="stylesheet" href="https://grcodeclub.github.io/css/layout.css">
         <link rel="stylesheet" href="https://grcodeclub.github.io/css/body.css">
         <link rel="stylesheet" href="https://grcodeclub.github.io/css/list.css">      
         <link rel='icon' type='image/png' href='https://grcodeclub.github.io/file/logo/black_logo.png'>
@@ -20,13 +19,11 @@
         <div class="container">
             <section class="show_desktop"> <!--Αρχή Εμφάνιση Υπολογιστή-->
                 <div class="Header"> <!--Αρχή Επικεφαλίδας-->
-                    <table>
-                        <tr>
-                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
-                            <td><h1 class="header_text"><a href="https://grcodeclub.github.io/"><span class="header_text">GrCode Club</span></a></h1></td>
-                            <td><a href="https://github.com/GrCodeClub/javascript/edit/main/index.html" target="_blank"><img src="https://grcodeclub.github.io/file/logo_and_graphic/edit.png"  width="60px"></a></td>
-                        </tr>
-                    </table> 
+                    <div class="layout">
+                        <div><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></div>
+                        <div><h1 class="header_text"><a href="https://grcodeclub.github.io/"><span class="header_text">GrCode Club</span></a></h1></div>
+                        <div><a href="https://github.com/GrCodeClub/javascript/edit/main/index.html" target="_blank"><img src="https://grcodeclub.github.io/file/logo_and_graphic/edit.png"  width="60px"></a></div>
+                    </div>
                 </div> <!--Τέλος Επικεφαλίδας-->
            
                 <div class="Menu"> <!--Αρχή Menu-->
@@ -39,12 +36,10 @@
 
             <section class="show_mobile">  <!--Αρχή εμφάνιση σε κινητά-->
                 <div class="Header"> <!--Αρχή Επικεφαλίδας σε κινητά-->
-                    <table>
-                        <tr>
-                            <td><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></td>
-                            <td><h1 class="header_text"><a href="https://grcodeclub.github.io/"><span class="header_text">GrCode Club</span></a></h1></td>
-                        </tr>
-                    </table> 
+                    <div class="layout">
+                        <div><img src="https://grcodeclub.github.io/file/logo_and_graphic/logo.png" class="logo"/></div>
+                        <div><h1 class="header_text"><a href="https://grcodeclub.github.io/"><span class="header_text">GrCode Club</span></a></h1></div>
+                    </div> 
                 </div> <!--Τέλος Επικεφαλίδας σε κινητά -->
                 <div>
                     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -67,7 +62,6 @@
                         <ul class="list">
                             <a href="./post/commands.html" class="link">Εντολές</a>
                         </ul>
-
                         <ul class="list">
                             <a href="./post/EventListeners.html" class="link">Event Listeners</a>
                         </ul>
