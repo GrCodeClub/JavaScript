@@ -1,4 +1,4 @@
-//------------1η ΑΝΑΖΗΤΣΗ-----------------------------------
+//------------1η ΑΝΑΖΗΤΗΣΗ-----------------------------------
 // searchInput
 // lists
 const searchInput = document.getElementById("searchInput");
@@ -24,7 +24,7 @@ function removeAccents(text) {
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-//------------2η ΑΝΑΖΗΤΣΗ-----------------------------------
+//------------2η ΑΝΑΖΗΤΗΣΗ-----------------------------------
 // searchInput1
 // lists1
 const searchInput1 = document.getElementById("searchInput1");
