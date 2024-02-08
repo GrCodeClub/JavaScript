@@ -1,3 +1,6 @@
+//------------1η ΑΝΑΖΗΤΣΗ-----------------------------------
+// searchInput
+// lists
 const searchInput = document.getElementById("searchInput");
 const lists = document.querySelectorAll(".list");
 
@@ -20,15 +23,18 @@ searchInput.addEventListener("input", function() {
 function removeAccents(text) {
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
-//-----------------------------------------------------------
-const searchInput = document.getElementById("searchInput1");
-const lists = document.querySelectorAll(".list1");
 
-searchInput.addEventListener("input", function() {
-  const searchValue = removeAccents(searchInput.value.toLowerCase());
+//------------2η ΑΝΑΖΗΤΣΗ-----------------------------------
+// searchInput1
+// lists1
+const searchInput1 = document.getElementById("searchInput1");
+const lists1 = document.querySelectorAll(".list1");
 
-  lists.forEach(function(list) {
-    Array.from(list.getElementsByTagName("li")).forEach(function(item) {
+searchInput1.addEventListener("input", function() {
+  const searchValue = removeAccents(searchInput1.value.toLowerCase());
+
+  lists1.forEach(function(lists1) {
+    Array.from(lists1.getElementsByTagName("li")).forEach(function(item) {
       const itemText = removeAccents(item.textContent.toLowerCase());
 
       if (itemText.includes(searchValue)) {
