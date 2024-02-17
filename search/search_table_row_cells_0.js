@@ -4,14 +4,14 @@ const rows = table.getElementsByTagName("tr");
 
 searchInput.addEventListener("input", function() {
   const searchValue = removeAccents(searchInput.value.toLowerCase());
-  const searchWords = searchValue.split(" ");
+  const searchPhrases = searchValue.match(/\b[\w'-]+\b/g); // Φράσεις με βάση τα κενά
 
   Array.from(rows).forEach(function(row, index) {
     let match = false;
     const firstCellText = removeAccents(row.cells[0].textContent.toLowerCase());
 
-    searchWords.forEach(function(word) {
-      if (firstCellText.includes(word)) {
+    searchPhrases.forEach(function(phrase) {
+      if (firstCellText.includes(phrase)) {
         match = true;
       }
     });
