@@ -11,7 +11,7 @@ searchInput.addEventListener("input", function() {
     const firstCellText = removeAccents(row.cells[0].textContent.toLowerCase());
 
     searchPhrases.forEach(function(phrase) {
-      if (firstCellText.includes(phrase)) {
+      if (firstCellText.indexOf(phrase) !== -1) {
         match = true;
       }
     });
