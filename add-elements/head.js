@@ -7,6 +7,7 @@ const cssLinks = [
     "https://grcodeclub.github.io/css/code_bg.css",
     "https://grcodeclub.github.io/css/prism.css",
     "https://grcodeclub.github.io/css/list.css",
+     "https://grcodeclub.github.io/css/table.css",
     "https://grcodeclub.github.io/css/body.css"
 ];
 
