@@ -35,3 +35,16 @@ head.appendChild(faviconLink);
 
 // Θέτουμε το title της σελίδας
 document.title = 'GrCode Club';
+
+// Δημιουργία ενός νέου στοιχείου <meta>
+const metaElement = document.createElement('meta');
+
+// Ορίζουμε την ιδιότητα 'name' ως 'viewport'
+metaElement.setAttribute('name', 'viewport');
+
+// Ορίζουμε την ιδιότητα 'content' με την τιμή που θέλουμε
+// Σε αυτήν την περίπτωση, ορίζουμε initial-scale=0.8
+metaElement.setAttribute('content', 'width=device-width, initial-scale=0.8');
+
+// Προσθέτουμε το στοιχείο <meta> στο <head> του HTML εγγράφου
+document.head.appendChild(metaElement);
