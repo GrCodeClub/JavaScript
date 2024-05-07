@@ -28,7 +28,7 @@ const htmlContent = `
 `;
 
 // Εύρεση του στόχου με το id 'add_headder'
-const addHeadderDiv = document.getElementById('add_headder');
+const addHeadderDiv = document.getElementById('add_headder_and_menu');
 
 // Προσθήκη του HTML περιεχομένου στο div με το id 'add_headder'
 if (addHeadderDiv) {
