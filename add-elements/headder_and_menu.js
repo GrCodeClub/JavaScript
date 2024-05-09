@@ -16,7 +16,7 @@ const htmlContent = `
             <section class="show_mobile">  <!--Αρχή εμφάνιση σε κινητά-->
                 <div class="Header"> <!--Αρχή Επικεφαλίδας σε κινητά-->
                     <div class="layout">
-                        <div><img src="https://grcodeclub.gr/file/logo_and_graphic/logo.png" class="logo"/></div>
+                        <div><img src="https://grcodeclub.gr/files-page/logo/white.png" class="logo"/></div>
                         <div><h1 class="header_text"><a href="https://grcodeclub.gr/"><span class="header_text">GrCode Club</span></a></h1></div>
                     </div> 
                 </div> <!--Τέλος Επικεφαλίδας σε κινητά -->
