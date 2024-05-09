@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Βρείτε το κουμπί με την κλάση `showCardButton`
-    const button = document.querySelector('.showCardButton');
-    // Βρείτε το στοιχείο `card-content` που θα αλλάξει το `max-height`
-    const cardContent = document.querySelector('.card-content');
+    // Βρείτε όλα τα κουμπιά με την κλάση `showCardButton`
+    const buttons = document.querySelectorAll('.showCardButton');
 
-    // Προσθέστε έναν χειριστή κλικ στο κουμπί
-    button.addEventListener('click', function() {
-        // Ελέγξτε αν το `max-height` είναι 0 ή κρυμμένο
-        if (cardContent.style.maxHeight === '0px' || cardContent.style.maxHeight === '') {
-            // Εμφανίστε το περιεχόμενο του `card-content`
-            // Ορίστε το `max-height` ώστε να ταιριάζει στο ύψος του περιεχομένου
-            cardContent.style.maxHeight = cardContent.scrollHeight + 'px';
-        } else {
-            // Απόκρυψη του περιεχομένου του `card-content`
-            // Ορίστε το `max-height` σε 0 για να το αποκρύψετε
-            cardContent.style.maxHeight = '0';
-        }
+    // Προσθέστε έναν χειριστή κλικ σε κάθε κουμπί
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Βρείτε το κοντινό `card-content` στοιχείο του κουμπιού
+            const cardContent = button.nextElementSibling;
+
+            // Ελέγξτε την τρέχουσα τιμή του `max-height` στο `card-content`
+            if (cardContent.style.maxHeight === '0px' || cardContent.style.maxHeight === '') {
+                // Εμφανίστε το περιεχόμενο του `card-content` ορίζοντας το `max-height` στο ύψος του περιεχομένου
+                cardContent.style.maxHeight = cardContent.scrollHeight + 'px';
+            } else {
+                // Απόκρυψη του περιεχομένου του `card-content` ορίζοντας το `max-height` σε `0`
+                cardContent.style.maxHeight = '0';
+            }
+        });
     });
 });
