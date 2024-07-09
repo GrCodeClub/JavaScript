@@ -1,8 +1,8 @@
 // Αναζητά το στοιχείο με ID "searchInput"
 const searchInput = document.getElementById("searchInput");
 
-// Αναζητά τον πίνακα με ID "table"
-const table = document.getElementById("table");
+// Αναζητά τον πίνακα με ID "protocolTable"
+const table = document.getElementById("protocolTable");
 
 // Παίρνει όλες τις γραμμές του πίνακα
 const rows = table.getElementsByTagName("tr");
@@ -17,15 +17,15 @@ searchInput.addEventListener("input", function() {
     // Αρχικοποιεί τη μεταβλητή match σε false για κάθε γραμμή
     let match = false;
 
-    // Παίρνει το κείμενο του πρώτου κελιού και το μετατρέπει σε πεζούς χαρακτήρες και αφαιρεί τις τόνους
+    // Παίρνει το κείμενο του πρώτου κελιού της γραμμής και το μετατρέπει σε πεζούς χαρακτήρες και αφαιρεί τις τόνους
     const firstCellText = removeAccents(row.cells[0].textContent.toLowerCase());
 
-    // Ελέγχει εάν το κείμενο του 1ου κελιού περιέχει την τιμή αναζήτησης
+    // Ελέγχει εάν το κείμενο του πρώτου κελιού περιέχει την τιμή αναζήτησης
     if (firstCellText.includes(searchValue)) {
       match = true; // Εάν υπάρχει αντιστοίχιση, ορίζει τη μεταβλητή match σε true
     }
 
-    // Εάν υπάρχει αντιστοίχιση ή είμαστε στην 1η γραμμή, εμφανίζει την γραμμή, διαφορετικά την κρύβει
+    // Εάν υπάρχει αντιστοίχιση ή είμαστε στην 1η γραμμή (κεφαλίδα), εμφανίζει τη γραμμή, διαφορετικά την κρύβει
     if (match || index === 0) {
       row.style.display = "table-row";
     } else {
