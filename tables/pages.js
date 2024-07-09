@@ -7,14 +7,14 @@ let currentPage = 1;
 function displayTable(page) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    const tableBody = document.querySelector('#protocolTable tbody');
+    const tableBody = document.querySelector('#dataTable tbody');
     tableBody.innerHTML = '';
 
     const paginatedItems = data.slice(start, end);
     for (const item of paginatedItems) {
         const row = `<tr>
-            <td>${item.protocol}</td>
-            <td>${item.description}</td>
+            <td>${item.cell0}</td>
+            <td>${item.cell1}</td>
         </tr>`;
         tableBody.innerHTML += row;
     }
