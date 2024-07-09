@@ -2,7 +2,7 @@
 const searchInput = document.getElementById("searchInput");
 
 // Αναζητά τον πίνακα με ID "protocolTable"
-const table = document.getElementById("protocolTable");
+const table = document.getElementById("dataTable");
 
 // Παίρνει όλες τις γραμμές του πίνακα
 const rows = table.getElementsByTagName("tr");
