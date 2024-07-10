@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const itemsPerPage = 5;
+    const itemsPerPage = 15;
     let currentPage = 1;
 
     const table1 = document.getElementById('table');
