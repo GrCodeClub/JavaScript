@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const cells = row.querySelectorAll('td');
             const cell0 = cells[0].textContent.trim();
             const cell1 = cells[1].innerHTML.trim();
-            const cell1 = cells[2].innerHTML.trim();
+            const cell2 = cells[2].innerHTML.trim();
 
             const newRow = `<tr>
                 <td>${cell0}</td>
