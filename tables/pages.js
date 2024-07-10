@@ -1,64 +1,107 @@
-
 document.addEventListener('DOMContentLoaded', function() {
+    const itemsPerPage = 5;
+    let currentPage = 1;
 
-const itemsPerPage = 10;
-let currentPage = 1;
+    const table1 = document.getElementById('table');
+    const rows1 = table1.querySelectorAll('tr');
 
-function displayTable(page) {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const tableBody = document.querySelector('#dataTable tbody');
-    tableBody.innerHTML = '';
+    function displayTable(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const tableBody = document.querySelector('#table tbody');
+        tableBody.innerHTML = '';
 
-    const paginatedItems = data.slice(start, end);
-    for (const item of paginatedItems) {
-        const row = `<tr>
-            <td>${item.cell0}</td>
-            <td>${item.cell1}</td>
-        </tr>`;
-        tableBody.innerHTML += row;
+        const paginatedItems = Array.from(rows1).slice(start, end);
+        paginatedItems.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const cell0 = cells[0].textContent.trim();
+            const cell1 = cells[1].innerHTML.trim();
+            const newRow = `<tr>
+                <td>${cell0}</td>
+                <td>${cell1}</td>
+            </tr>`;
+            tableBody.innerHTML += newRow;
+        });
+
+        displayPagination();
     }
 
-    displayPagination();
-}
 
-function displayPagination() {
-const pagination = document.getElementById('pagination');
-pagination.innerHTML = '';
+    function fullTable(page) {
+        const tableBody = document.querySelector('#table tbody');
+        tableBody.innerHTML = '';
+    
+        rows1.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const cell0 = cells[0].textContent.trim();
+            const cell1 = cells[1].innerHTML.trim();
+            const newRow = `<tr>
+                <td>${cell0}</td>
+                <td>${cell1}</td>
+            </tr>`;
+            tableBody.innerHTML += newRow;
+        });
+    
+    
+       
+    }
 
-const totalPages = Math.ceil(data.length / itemsPerPage);
-const maxPagesToShow = 5; // Ορίζουμε το μέγιστο πλήθος σελίδων που θα εμφανίζονται
+    
+    function displayPagination() {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
 
-let startPage = currentPage - 3; // Αρχίζουμε να μετράμε από την τρέχουσα σελίδα - 3
-let endPage = currentPage + 2; // Τελειώνουμε στην τρέχουσα σελίδα + 2
+        const totalPages = Math.ceil(rows1.length / itemsPerPage);
+        const maxPagesToShow = 5;
 
-// Βεβαιωνόμαστε ότι η startPage είναι τουλάχιστον 1
-if (startPage < 1) {
-startPage = 1;
-endPage = Math.min(totalPages, maxPagesToShow); // Περιορίζουμε το τέλος στο maxPagesToShow
-}
+        let startPage = currentPage - 2;
+        let endPage = currentPage + 2;
 
-// Βεβαιωνόμαστε ότι η endPage είναι το πολύ totalPages
-if (endPage > totalPages) {
-endPage = totalPages;
-startPage = Math.max(1, endPage - maxPagesToShow + 1); // Προσαρμόζουμε την startPage ανάλογα
-}
+        if (startPage < 1) {
+            startPage = 1;
+            endPage = Math.min(totalPages, maxPagesToShow);
+        }
 
-// Δημιουργούμε τα κουμπιά για κάθε σελίδα
-for (let i = startPage; i <= endPage; i++) {
-const button = document.createElement('button');
-button.textContent = i;
-if (i === currentPage) {
-button.disabled = true;
-}
-button.addEventListener('click', () => {
-currentPage = i;
-displayTable(currentPage);
-});
-pagination.appendChild(button);
-}
-}
+        if (endPage > totalPages) {
+            endPage = totalPages;
+            startPage = Math.max(1, endPage - maxPagesToShow + 1);
+        }
 
-displayTable(currentPage);
+        for (let i = startPage; i <= endPage; i++) {
+            const button = document.createElement('button');
+            button.textContent = i;
+            if (i === currentPage) {
+                button.disabled = true;
+            }
+            button.addEventListener('click', () => {
+                currentPage = i;
+                displayTable(currentPage);
+            });
+            pagination.appendChild(button);
+        }
+    }
 
+    function checkAndDisplayTable() {
+        const showCheckbox = document.getElementById('show');
+        
+        if (showCheckbox.checked) {
+            const pagination = document.getElementById('pagination');
+            const searchInput = document.getElementById('search');
+            searchInput.style.display = 'block';
+            pagination.style.display = 'none';
+            fullTable(currentPage);
+        } else {
+            displayTable(currentPage);
+            const searchInput = document.getElementById('search');
+            searchInput.style.display = 'none';
+            pagination.style.display = 'block';
+        }
+    }
+
+    // Προσθέτουμε ακροατή γεγονότων στο checkbox
+    const showCheckbox = document.getElementById('show');
+    showCheckbox.addEventListener('change', checkAndDisplayTable);
+
+    // Αρχική εμφάνιση του πίνακα ανάλογα με την κατάσταση του checkbox
+    checkAndDisplayTable();
 });
