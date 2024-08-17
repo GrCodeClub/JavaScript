@@ -14,23 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add header row
         if (headerRow) {
-            tableBody.innerHTML += headerRow.outerHTML;
+            tableBody.appendChild(headerRow.cloneNode(true)); // Use cloneNode to keep original header
         }
 
         // Paginate rows, skipping the header row
         const paginatedItems = Array.from(rows1).slice(start, end);
         paginatedItems.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const cell0 = cells[0].textContent.trim();
-            const cell1 = cells[1].innerHTML.trim();
-            const cell2 = cells[2].innerHTML.trim();
-
-            const newRow = `<tr>
-                <td>${cell0}</td>
-                <td>${cell1}</td>
-                <td>${cell2}</td>
-            </tr>`;
-            tableBody.innerHTML += newRow;
+            tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
         });
 
         displayPagination();
@@ -42,21 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add header row
         if (headerRow) {
-            tableBody.innerHTML += headerRow.outerHTML;
+            tableBody.appendChild(headerRow.cloneNode(true)); // Use cloneNode to keep original header
         }
 
         rows1.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const cell0 = cells[0].textContent.trim();
-            const cell1 = cells[1].innerHTML.trim();
-            const cell2 = cells[2].innerHTML.trim();
-
-            const newRow = `<tr>
-                <td>${cell0}</td>
-                <td>${cell1}</td>
-                <td>${cell2}</td>
-            </tr>`;
-            tableBody.innerHTML += newRow;
+            tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
         });
     }
 
