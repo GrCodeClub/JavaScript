@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
         });
 
+        applyRowColors(); // Εφαρμογή χρωματισμού μετά την απόδοση του πίνακα
         displayPagination();
     }
 
@@ -51,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
             }
         });
+
+        applyRowColors(); // Εφαρμογή χρωματισμού μετά την απόδοση του πλήρους πίνακα
     }
 
     function displayPagination() {
@@ -87,6 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function applyRowColors() {
+        const tableRows = document.querySelectorAll('#table tbody tr:not(#title-table)'); // Επιλέγουμε όλες τις γραμμές εκτός από την επικεφαλίδα
+
+        tableRows.forEach((row, index) => {
+            if (index % 2 === 0) {
+                row.style.backgroundColor = 'rgba(211, 211, 211, 0.211)'; // Αλλάζουμε το χρώμα σε ανοιχτό γκρι για τις ζυγές γραμμές
+            }
+        });
+    }
+
     function checkAndDisplayTable() {
         const searchInput = document.getElementById('searchInput');
         
@@ -111,14 +124,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial table display based on search input
     checkAndDisplayTable();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const tableRows = document.querySelectorAll('#table tr:not(#title-table)'); // Επιλέγουμε όλες τις γραμμές εκτός από την επικεφαλίδα
-
-    tableRows.forEach((row, index) => {
-        if (index % 2 === 0) {
-            row.style.backgroundColor = 'rgba(211, 211, 211, 0.211)'; // Αλλάζουμε το χρώμα σε ανοιχτό γκρι για τις ζυγές γραμμές
-        }
-    });
 });
