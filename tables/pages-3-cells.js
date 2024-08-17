@@ -75,3 +75,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+function checkAndDisplayTable() {
+        const searchInput = document.getElementById('searchInput');
+        
+        if (searchInput.value.trim() !== '') {
+            // Display full table when search input is not empty
+            const pagination = document.getElementById('pagination');
+            searchInput.style.display = 'block';
+            pagination.style.display = 'none';
+            fullTable();
+        } else {
+            // Otherwise, display paginated table
+            displayTable(currentPage);
+            searchInput.style.display = 'block'; // Keep the search input visible
+            const pagination = document.getElementById('pagination');
+            pagination.style.display = 'block';
+        }
+    }
+
+    // Add event listener to the search input
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', checkAndDisplayTable);
+
+    // Initial table display based on search input
+    checkAndDisplayTable();
+});
