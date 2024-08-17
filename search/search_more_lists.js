@@ -1,7 +1,7 @@
 //------------1η ΑΝΑΖΗΤΗΣΗ-----------------------------------
 // searchInput
 // lists
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInputList");
 const lists = document.querySelectorAll(".list");
 
 searchInput.addEventListener("input", function() {
