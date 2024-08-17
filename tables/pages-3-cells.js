@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-});
 
 function checkAndDisplayTable() {
         const searchInput = document.getElementById('searchInput');
