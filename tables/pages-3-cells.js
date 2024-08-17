@@ -4,13 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const table1 = document.getElementById('table');
     const rows1 = table1.querySelectorAll('tr');
+    const headerRow = table1.querySelector('#title-table');
 
     function displayTable(page) {
-        const start = (page - 1) * itemsPerPage;
+        const start = (page - 1) * itemsPerPage + 1; // +1 to skip header row
         const end = start + itemsPerPage;
         const tableBody = document.querySelector('#table tbody');
         tableBody.innerHTML = '';
 
+        // Add header row
+        if (headerRow) {
+            tableBody.innerHTML += headerRow.outerHTML;
+        }
+
+        // Paginate rows, skipping the header row
         const paginatedItems = Array.from(rows1).slice(start, end);
         paginatedItems.forEach(row => {
             const cells = row.querySelectorAll('td');
@@ -29,11 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
         displayPagination();
     }
 
-
     function fullTable(page) {
         const tableBody = document.querySelector('#table tbody');
         tableBody.innerHTML = '';
-    
+
+        // Add header row
+        if (headerRow) {
+            tableBody.innerHTML += headerRow.outerHTML;
+        }
+
         rows1.forEach(row => {
             const cells = row.querySelectorAll('td');
             const cell0 = cells[0].textContent.trim();
@@ -43,21 +54,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const newRow = `<tr>
                 <td>${cell0}</td>
                 <td>${cell1}</td>
-                 <td>${cell2}</td>
+                <td>${cell2}</td>
             </tr>`;
             tableBody.innerHTML += newRow;
         });
-    
-    
-       
     }
 
-    
     function displayPagination() {
         const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
 
-        const totalPages = Math.ceil(rows1.length / itemsPerPage);
+        const totalPages = Math.ceil((rows1.length - 1) / itemsPerPage); // Adjusted for header row
         const maxPagesToShow = 5;
 
         let startPage = currentPage - 2;
@@ -104,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Προσθέτουμε ακροατή γεγονότων στο checkbox
+    // Add event listener to the checkbox
     const showCheckbox = document.getElementById('show');
     showCheckbox.addEventListener('change', checkAndDisplayTable);
 
-    // Αρχική εμφάνιση του πίνακα ανάλογα με την κατάσταση του checkbox
+    // Initial table display based on checkbox state
     checkAndDisplayTable();
 });
