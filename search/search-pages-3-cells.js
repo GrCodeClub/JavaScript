@@ -39,10 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         rows1.forEach(row => {
             if (row === headerRow) return; // Skip header row
-            const cells = row.querySelectorAll('td');
-            const match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(searchTerm));
 
-            if (match) {
+            // Get cells from the row
+            const cells = row.querySelectorAll('td');
+
+            // Check if at least one of the two specified columns contains the search term
+            const column1Match = cells[0].textContent.toLowerCase().includes(searchTerm);
+            const column2Match = cells[1].textContent.toLowerCase().includes(searchTerm);
+
+            if (column1Match || column2Match) {
                 tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
             }
         });
@@ -106,4 +111,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial table display based on search input
     checkAndDisplayTable();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tableRows = document.querySelectorAll('#table tr:not(#title-table)'); // Επιλέγουμε όλες τις γραμμές εκτός από την επικεφαλίδα
+
+    tableRows.forEach((row, index) => {
+        if (index % 2 === 0) {
+            row.style.backgroundColor = 'rgba(211, 211, 211, 0.211)'; // Αλλάζουμε το χρώμα σε ανοιχτό γκρι για τις ζυγές γραμμές
+        }
+    });
 });
