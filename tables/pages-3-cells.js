@@ -74,27 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function checkAndDisplayTable() {
-        const showCheckbox = document.getElementById('show');
-        
-        if (showCheckbox.checked) {
-            const pagination = document.getElementById('pagination');
-            const searchInput = document.getElementById('search');
-            searchInput.style.display = 'block';
-            pagination.style.display = 'none';
-            fullTable(currentPage);
-        } else {
-            displayTable(currentPage);
-            const searchInput = document.getElementById('search');
-            searchInput.style.display = 'none';
-            pagination.style.display = 'block';
-        }
-    }
-
-    // Add event listener to the checkbox
-    const showCheckbox = document.getElementById('show');
-    showCheckbox.addEventListener('change', checkAndDisplayTable);
-
-    // Initial table display based on checkbox state
-    checkAndDisplayTable();
 });
