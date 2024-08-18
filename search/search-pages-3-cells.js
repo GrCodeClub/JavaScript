@@ -46,9 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Check if at least one of the two specified columns contains the search term
             const column1Match = cells[0].textContent.toLowerCase().includes(searchTerm);
-            const column2Match = cells[1].textContent.toLowerCase().includes(searchTerm);
 
-            if (column1Match || column2Match) {
+            if (column1Match) {
                 tableBody.appendChild(row.cloneNode(true)); // Use cloneNode to copy row
             }
         });
