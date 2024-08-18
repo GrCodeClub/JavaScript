@@ -4,20 +4,20 @@
 
 // Λίστα με τους συνδέσμους προς τα αρχεία CSS
 const cssLinks = [
-   "https://grcodeclub.gr/website/css/grcodeclub/header_and_footer.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/main.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/text.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/layout.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/code_bg.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/button.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/card.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/forms.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/img.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/prism.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/list.css",
-    "https://grcodeclub.gr/website/css/grcodeclub/table.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/bg.css",
-   "https://grcodeclub.gr/website/css/grcodeclub/social.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/header_and_footer.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/main.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/text.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/layout.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/code_bg.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/button.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/card.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/forms.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/img.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/prism.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/list.css",
+    "https://grcodeclub.gr/web/css/grcodeclub/table.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/bg.css",
+   "https://grcodeclub.gr/web/css/grcodeclub/social.css",
    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 ];
 
