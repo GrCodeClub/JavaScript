@@ -1,3 +1,4 @@
+// <footer><div class="add_footer"></div><script src="./footer.js"></script></footer>
 // Βρες το στοιχείο <footer> με το id 'add_footer'
 const addFooter = document.getElementById('add_footer');
 
