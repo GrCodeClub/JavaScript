@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta property="og:image" content="https://grcodeclub.github.io/file/background/5.png"/>
-        <meta property="og:title" content="JavaScript | Event Listeners">
+        <meta property="og:title" content="JavaScript | EventListeners">
         <script src="https://grcodeclub.github.io/js/jquery.js"></script>
         <script src="https://grcodeclub.github.io/web/js/menu.js"></script>
         <script src="https://grcodeclub.github.io/js/prism.js"></script>
@@ -11,24 +11,38 @@
     <body class="website">
         <div class="container">
             <div id="add_headder_and_menu"></div><script src="https://grcodeclub.gr/js/add/headder_and_menu.js"></script>
-
             <div class="Text"> <!--Αρχή Κειμένου-->
                 <a href="https://grcodeclub.gr/javascript"><img class="logo_back"></a> <script src="https://grcodeclub.github.io/js/add/logo-back.js"></script>                
                 <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
-                    <h1 class="title">JavaScript | Event Listeners</h1>
-                 
-                    <p>Event Listeners: Χρησιμοποιούνται για την παρακολούθηση ενεργειών του χρήστη και την εκτέλεση κώδικα όταν συμβούν αυτές οι ενέργειες.</p>
-                    <hr>
+                    <h1 class="title">JavaScript | EventListeners</h1>
+                    <p style="text-align: center;">EventListeners: Χρησιμοποιούνται για την παρακολούθηση ενεργειών του χρήστη και την εκτέλεση κώδικα όταν συμβούν αυτές οι ενέργειες.</h3>
+                    
+                    <h3 class="highlight_black">1) DOMContentLoaded</h3>
+                    <p>Το event DOMContentLoaded ενεργοποιείται όταν το αρχικό HTML έγγραφο έχει φορτωθεί πλήρως και έχει αναλυθεί (parsed) από τον browser, αλλά χωρίς να περιμένει την πλήρη φόρτωση εξωτερικών πόρων, όπως εικόνες και στυλ (CSS).</p>
+                    <p>Όταν τοποθετείτε JavaScript κώδικα στην κεφαλίδα (<head>) ενός HTML εγγράφου, υπάρχει πιθανότητα να εκτελεστεί πριν ακόμα φορτωθεί πλήρως το DOM (Document Object Model). Αυτό μπορεί να προκαλέσει σφάλματα αν ο κώδικας προσπαθεί να αλληλεπιδράσει με στοιχεία που δεν έχουν φορτωθεί ακόμα.
+                        <br>
+                        Χρησιμοποιώντας το event DOMContentLoaded, εξασφαλίζετε ότι ο κώδικας JavaScript θα εκτελεστεί μόνο αφού το DOM είναι πλήρως διαθέσιμο, αλλά χωρίς να περιμένετε να φορτωθούν και οι εξωτερικοί πόροι (π.χ., εικόνες, αρχεία CSS).</p>
 
-                    <p>Click Event Listener: Εκτελεί κώδικα όταν ο χρήστης κάνει κλικ σε ένα στοιχείο.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener("DOMContentLoaded", function() {
+    // Ο κώδικας εδώ θα εκτελεστεί αφού το DOM έχει φορτωθεί πλήρως
+    const button = document.querySelector("button");
+    button.addEventListener("click", function() {
+        console.log("Το κουμπί έχει πατηθεί!");
+    });
+});</code></pre></div></div>
+                    
+                    
+                    <h3 class="highlight_black">2) Click EventListeners</h3>
+                    <p>Εκτελεί κώδικα όταν ο χρήστης κάνει κλικ σε ένα στοιχείο.</p>
                     <div class="bg_preview">
                     <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myButton = document.getElementById("myButton");
 myButton.addEventListener("click", function() {
     console.log("Ο χρήστης κάνει κλικ!");
 });</code></pre></div></div>
 
-                    <hr>
-                    <p>Mouseover/Mouseout Event Listeners: Εκτελούν κώδικα όταν ο χρήστης τοποθετεί το ποντίκι πάνω από ένα στοιχείο ή το απομακρύνει.</p>
+                    
+                    <h3 class="highlight_black">3) Mouseover/Mouseout EventListeners</h3>
+                    <p>Εκτελούν κώδικα όταν ο χρήστης τοποθετεί το ποντίκι πάνω από ένα στοιχείο ή το απομακρύνει.</p>
                     <div class="bg_preview">
                     <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myElement = document.getElementById("myElement");
 document.getElementById("myElement").addEventListener("mouseover", function() {
@@ -39,27 +53,39 @@ document.getElementById("myElement").addEventListener("mouseout", function() {
     console.log("Ο χρήστης απομακρύνει το ποντίκι από το στοιχείο!");
 });</code></pre></div></div>
 
-                    <hr>
-                    <p>Input Event Listener: Εκτελεί κώδικα όταν ο χρήστης πληκτρολογεί ή εκτελεί ενέργειες σε ένα input στοιχείο.</p>
+                    <h3 class="highlight_black">4) Mousemove EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης κινεί το ποντίκι πάνω από ένα στοιχείο.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener("mousemove", function(event) {
+    console.log(`Το ποντίκι μετακινείται: X=${event.clientX}, Y=${event.clientY}`);
+});</code></pre></div></div>
+                    
+                    <h3 class="highlight_black">5) Dblclick EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης κάνει διπλό κλικ σε ένα στοιχείο.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.querySelector("button").addEventListener("dblclick", function() {
+    console.log("Ο χρήστης έκανε διπλό κλικ στο κουμπί.");
+});</code></pre></div></div>
+
+
+                    <h3 class="highlight_black">6) Input EventListeners</h3>
+                    <p>Εκτελεί κώδικα όταν ο χρήστης πληκτρολογεί ή εκτελεί ενέργειες σε ένα input στοιχείο.</p>
                     <div class="bg_preview">
                     <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const myInput = document.getElementById("myInput");
 myInput.addEventListener("input", function() {
     console.log("Ο χρήστης πληκτρολογεί στο πεδίο εισαγωγής :"+myInput.value);
 });</code></pre></div></div>
-
-                    <hr>
-                    <p>Submit Event Listener: Εκτελεί κώδικα όταν ο χρήστης υποβάλλει ένα φόρμα.</p>
+                    
+                    <h3 class="highlight_black">7) Submit EventListeners Listener</h3>
+                    <p>Εκτελεί κώδικα όταν ο χρήστης υποβάλλει ένα φόρμα.</p>
                     <div class="bg_preview">
                     <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">      const submitButton = document.getElementById("submitButton");
 submitButton.addEventListener("click", function(event) {
     event.preventDefault(); // Αποτρέπει την προεπιλεγμένη συμπεριφορά της υποβολής
     console.log("Ο χρήστης υπέβαλε τη φόρμα!");
 });</code></pre></div></div>
-
                     <p>Η μέθοδος event.preventDefault() χρησιμοποιείται για να ακυρώνει την προεπιλεγμένη συμπεριφορά ενός γεγονότος.</p>
-                    <hr>
-
-                    <p>Keydown/Keyup Event Listeners: Εκτελούν κώδικα όταν ο χρήστης πιέζει ή αφήνει ένα πλήκτρο του πληκτρολογίου.</p>
+                    
+                    <h3 class="highlight_black">8) Keydown/Keyup EventListeners</h3>
+                    <p>Εκτελούν κώδικα όταν ο χρήστης πιέζει ή αφήνει ένα πλήκτρο του πληκτρολογίου.</p>
                     <div class="bg_preview">
                     <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript"> document.addEventListener("keydown", function(event) {
     console.log(`Ο χρήστης πίεσε το πλήκτρο με κωδικό ${event.keyCode}`);
@@ -69,11 +95,125 @@ document.addEventListener("keyup", function(event) {
     console.log(`Ο χρήστης αφήνει το πλήκτρο με κωδικό ${event.keyCode}`);
 });</code></pre></div></div>
 
+                    <h3 class="highlight_black">9) Focus EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ένα στοιχείο εισαγωγής (input, textarea, select κ.λπ.) λαμβάνει την εστίαση (focus).</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.querySelector("input").addEventListener("focus", function() {
+    console.log("Το πεδίο εισαγωγής έχει την εστίαση.");
+});</code></pre></div></div>
+                    
+                    <h3 class="highlight_black">10) Blur EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ένα στοιχείο εισαγωγής χάνει την εστίαση.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.querySelector("input").addEventListener("blur", function() {
+    console.log("Το πεδίο εισαγωγής έχασε την εστίαση.");
+});</code></pre></div></div>
+                    
+                    <h3 class="highlight_black">11) Change EventListeners</h3>
+                    <p>Ενεργοποιείται όταν η τιμή ενός στοιχείου εισαγωγής αλλάζει και η αλλαγή επιβεβαιώνεται (π.χ., όταν ο χρήστης πατάει "Enter" ή χάνει την εστίαση).</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.querySelector("input").addEventListener("change", function(event) {
+    console.log(`Η τιμή άλλαξε σε: ${event.target.value}`);
+});</code></pre></div></div>
+                    
+                    <h3 class="highlight_black">12) Contextmenu EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης κάνει δεξί κλικ για να ανοίξει το context menu.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener("contextmenu", function(event) {
+    event.preventDefault(); // Απενεργοποίηση του προεπιλεγμένου context menu
+    console.log("Το context menu έχει ενεργοποιηθεί.");
+});</code></pre></div></div> 
+
+                    <h3 class="highlight_black">13) Online και Offline EventListeners</h3>
+                    <p>online: Ενεργοποιείται όταν το πρόγραμμα περιήγησης συνδέεται στο διαδίκτυο.<br>
+                       offline: Ενεργοποιείται όταν το πρόγραμμα περιήγησης αποσυνδέεται από το διαδίκτυο.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener("online", function() {
+    console.log("Το πρόγραμμα περιήγησης είναι πλέον online.");
+});
+
+window.addEventListener("offline", function() {
+    console.log("Το πρόγραμμα περιήγησης είναι πλέον offline.");
+});</code></pre></div></div>
+    
+                    <h3 class="highlight_black">14) Copy, Cut, Paste EventListeners</h3>
+                    <p>Αυτά τα γεγονότα ενεργοποιούνται κατά την αντιγραφή (copy), αποκοπή (cut) και επικόλληση (paste) δεδομένων.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener("copy", function(event) {
+    console.log("Έγινε αντιγραφή περιεχομένου.");
+});
+
+document.addEventListener("cut", function(event) {
+    console.log("Έγινε αποκοπή περιεχομένου.");
+});
+
+document.addEventListener("paste", function(event) {
+    console.log("Έγινε επικόλληση περιεχομένου.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">15) Unload EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης φεύγει από τη σελίδα (π.χ., κλείνει το παράθυρο ή ανανεώνει τη σελίδα).</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener("unload", function() {
+    console.log("Ο χρήστης φεύγει από τη σελίδα.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">16) Load EventListeners</h3>
+                    <p>Ενεργοποιείται όταν η σελίδα ή ένα στοιχείο (όπως μια εικόνα) φορτώνεται πλήρως.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener("load", function() {
+    console.log("Η σελίδα φορτώθηκε πλήρως.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">17) Unload EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης φεύγει από τη σελίδα (π.χ., κλείνει το παράθυρο ή ανανεώνει τη σελίδα).</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener("unload", function() {
+    console.log("Ο χρήστης φεύγει από τη σελίδα.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">18) Wheel EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης κυλάει τον τροχό του ποντικιού (scrolling με το ποντίκι).</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener("wheel", function(event) {
+    console.log(`Ο χρήστης κύλησε τον τροχό του ποντικιού: Δέλτα Y=${event.deltaY}`);
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">19) Animationstart, animationend, animationiteration EventListeners</h3>
+                    <p>Αυτά τα γεγονότα ενεργοποιούνται κατά την έναρξη, το τέλος και την επανάληψη μιας CSS animation.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let animElement = document.querySelector(".animated-element");
+
+animElement.addEventListener("animationstart", function() {
+    console.log("Η animation ξεκίνησε.");
+});
+
+animElement.addEventListener("animationend", function() {
+    console.log("Η animation ολοκληρώθηκε.");
+});
+
+animElement.addEventListener("animationiteration", function() {
+    console.log("Η animation επαναλαμβάνεται.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">20) Transitionstart, transitionend EventListeners</h3>
+                    <p>Αυτά τα γεγονότα ενεργοποιούνται κατά την έναρξη και το τέλος μιας CSS transition.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let transElement = document.querySelector(".transitioned-element");
+
+transElement.addEventListener("transitionstart", function() {
+    console.log("Η transition ξεκίνησε.");
+});
+
+transElement.addEventListener("transitionend", function() {
+    console.log("Η transition ολοκληρώθηκε.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">21) Scroll EventListeners</h3>
+                    <p>Ενεργοποιείται όταν ο χρήστης κάνει κύλιση (scroll) στη σελίδα ή σε ένα στοιχείο.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener("scroll", function() {
+    console.log("Η σελίδα έχει κάνει κύλιση.");
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">22) Beforeunload EventListeners</h3>
+                    <p>Ενεργοποιείται πριν ο χρήστης φύγει από τη σελίδα. Μπορεί να χρησιμοποιηθεί για να εμφανίσει ένα προειδοποιητικό μήνυμα.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">// π.χ απο ένα textarea
+window.addEventListener("beforeunload", function(event) {
+    event.preventDefault();
+    event.returnValue = ''; // Απαραίτητο για να δείξει προειδοποίηση στον χρήστη
+});
+</code></pre></div></div>
                 </div><!-- Τέλος Background Κειμένου-->
             </div> <!--Τέλος Κειμένου-->
-
         </div> <!--Τέλος container-->
-        
         <!-- Footer -->
         <footer id="add-social"></footer><script src="https://grcodeclub.gr/js/add/social.js"></script>
     </body>
