@@ -1,1 +1,94 @@
+<html>
+    <head>
+        <meta property="og:image" content="https://grcodeclub.github.io/file/background/5.png"/>
+        <meta property="og:title" content="GrCode Club | JavaScript - Εντολές">
+        <script src="https://grcodeclub.github.io/js/jquery.js"></script>
+        <script src="https://grcodeclub.github.io/web/js/menu.js"></script>
+        <script src="https://grcodeclub.github.io/js/prism.js"></script>
+        <script src="https://grcodeclub.github.io/js/add/head.js"></script>
+        <script>
+            if (window.location.protocol === 'view-source:') {
+    window.location.href = 'https://example.com';
+}
+        </script>
+    </head>
 
+    <body class="website">
+        <div class="container">
+            <div id="add_headder_and_menu"></div><script src="https://grcodeclub.gr/js/add/headder_and_menu.js"></script>
+
+            <div class="Text"> <!--Αρχή Κειμένου-->
+                <a href="https://grcodeclub.gr/javascript"><img class="logo_back"></a> <script src="https://grcodeclub.github.io/js/add/logo-back.js"></script>
+                <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
+                    <h1 class="title">JavaScript Εντολές</h1>
+
+                    <h3 class="highlight_black">Αποτροπή Περιήγησης μέσω Συντόμευσης Πλήκτρων</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('keydown', function(event) {
+    if ((event.key === 'F12') || // Αποτροπή F12 (άνοιγμα DevTools)
+        (event.key === 'F11') || // Αποτροπή F11 (πλήρης οθόνη)
+        (event.key === 'F5') ||  // Αποτροπή F5 (ανανέωση σελίδας)
+        (event.ctrlKey && event.key === 'r') ) {  // Αποτροπή Ctrl + R (ανανέωση σελίδας)
+        event.preventDefault();
+        alert('This keyboard shortcut is disabled on this page.');
+    }
+});
+</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση του μενού περιβάλλοντος</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('contextmenu', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Επιλογής Κειμένου</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('selectstart', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Dragging Εικόνων και Στοιχείων</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('dragstart', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Copy (Αντιγραφή)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('copy', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Cut (Αποκοπή)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('cut', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Paste (Επικόλληση)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('paste', event => event.preventDefault());</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Κουμπιών του Ποντικιού (πέρα από το δεξί κλικ)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('mousedown', function(event) {
+    if (event.button === 1) { // Απενεργοποίηση του μεσαίου κλικ
+        event.preventDefault();
+    }
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Πλήκτρων Πλοήγησης του Ποντικιού</h3>
+                    <p>Αυτό αποτρέπει τους χρήστες από τη χρήση των κουμπιών "μπρος" και "πίσω" του ποντικιού για την πλοήγηση στην ιστοσελίδα.</p>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener('popstate', function(event) {
+    event.preventDefault();
+    alert('Back/Forward navigation is disabled.');
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Scroll (Κύλιση)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">window.addEventListener('scroll', function(event) {
+    event.preventDefault();
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Ζουμ με Πληκτρολόγιο ή Ποντίκι</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) || event.key === 'Escape') {
+        event.preventDefault();
+    }
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">Απενεργοποίηση Console Log</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log = function() {}; // Απενεργοποίηση console.log
+console.warn = function() {}; // Απενεργοποίηση console.warn
+console.error = function() {}; // Απενεργοποίηση console.error</code></pre></div></div>
+
+                  </div><!-- Τέλος Background Κειμένου-->
+            </div> <!--Τέλος Κειμένου-->
+
+        </div> <!--Τέλος container-->
+        
+        <!-- Footer -->
+        <footer id="add-social"></footer><script src="https://grcodeclub.gr/js/add/social.js"></script>
+    </body>
+</html>
