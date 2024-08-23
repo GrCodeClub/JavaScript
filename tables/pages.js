@@ -1,3 +1,9 @@
+//  Html File
+//  <table id="table">
+//    <tr id="title-table"><td>Όνομα</td> <td>Περιγραφή</td></tr>
+//  </table>
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const itemsPerPage = 15;
     let currentPage = 1;
