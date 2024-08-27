@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const table1 = document.getElementById('table1');
     const rows1 = table1.querySelectorAll('tr');
-    const headerRow = table1.querySelector('#title-table');
+    const headerRow = table1.querySelector('#title-table1');
 
     function displayTable(page) {
         const start = (page - 1) * itemsPerPage + 1; // +1 to skip header row
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyRowColors() {
-        const tableRows = document.querySelectorAll('#table tbody tr:not(#title-table)'); // Επιλέγουμε όλες τις γραμμές εκτός από την επικεφαλίδα
+        const tableRows = document.querySelectorAll('#table tbody tr:not(#title-table1)'); // Επιλέγουμε όλες τις γραμμές εκτός από την επικεφαλίδα
 
         tableRows.forEach((row, index) => {
             if (index % 2 === 0) {
