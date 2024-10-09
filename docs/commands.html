@@ -1,76 +1,71 @@
-<html>
-    <head>
-        <meta property="og:image" content="https://grcodeclub.github.io/files-page/preview/language/javascript.png"/>
-        <meta property="og:title" content="GrCode Club | JavaScript - Εντολές">
-        <script src="https://grcodeclub.github.io/js/add/data.js"></script>
-    </head>
-
-    <body>
-        <div class="container">
-            <div id="add_headder_and_menu"></div>
-
-            <div class="Text"> <!--Αρχή Κειμένου-->
-                 <a href="./"><h1 id="back_page"></h1></a>
-                <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
-                    <h1 class="title">JavaScript Εντολές</h1>
-
-                    <h3 class="highlight">Mεταβλητές</h3>
-                    <p>let και const: Χρησιμοποιούνται για τον ορισμό μεταβλητών. Οι μεταβλητές που δηλώνονται με let μπορούν να αλλάξουν τιμή, ενώ οι μεταβλητές που δηλώνονται με const είναι σταθερές και δεν μπορούν να αλλάξουν τιμή.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let count = 10;
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta property="og:image" content="https://grcodeclub.github.io/files-page/preview/programming/javascript.png"/>
+    <meta property="og:title" content="JavaScript | Εντολές">
+    <script src="https://grcodeclub.github.io/js/data.js"></script>
+</head>
+<body>
+    <div id="addHeader"></div>
+    <div class="container">
+        <h1 class="title">Εντολές</h1>
+        <p class="highlight">Mεταβλητές</p>
+        <p><code>let</code> και <code>const</code>: Χρησιμοποιούνται για τον ορισμό μεταβλητών. Οι μεταβλητές που δηλώνονται με let μπορούν να αλλάξουν τιμή, ενώ οι μεταβλητές που δηλώνονται με const είναι σταθερές και δεν μπορούν να αλλάξουν τιμή.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let count = 10;
 const PI = 3.14159;</code></pre></div></div>
 
-                    <h3 class="highlight">Εκτύπωση Mηνυμάτων</h3>
-                    <p>Στην console του προγράμματος περιήγησης.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log("Hello, world!");</code></pre></div></div>
+        <p class="highlight">Εκτύπωση Mηνυμάτων</p>
+        <p>Στην console του προγράμματος περιήγησης.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log("Hello, world!");</code></pre></div></div>
 
-                    <h3 class="highlight">Συνθήκες</h3>
-                    <p>if-else: Χρησιμοποιείται για τον έλεγχο της συνθήκης και την εκτέλεση κώδικα βάσει αυτής της συνθήκης.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let age = 18;
+        <p class="highlight">Συνθήκες</p>
+        <p><code>if-else</code> Χρησιμοποιείται για τον έλεγχο της συνθήκης και την εκτέλεση κώδικα βάσει αυτής της συνθήκης.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let age = 18;
 if (age >= 18) {
-    console.log("Είστε ενήλικας.");
+console.log("Είστε ενήλικας.");
 } else {
-    console.log("Είστε ανήλικος.");
+console.log("Είστε ανήλικος.");
 }</code></pre></div></div>
 
 
-                    <h3 class="highlight">Επανάληψη </h3>
-                    <p>for loop: Χρησιμοποιείται για την επανάληψη κώδικα συγκεκριμένο αριθμό φορών.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">for (let i = 0; i < 5; i++) {
-    console.log(i);
+        <p class="highlight">Επανάληψη </p>
+        <p><code>for</code> loop: Χρησιμοποιείται για την επανάληψη κώδικα συγκεκριμένο αριθμό φορών.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">for (let i = 0; i < 5; i++) {
+console.log(i);
 }</code></pre></div></div>
 
-                    <p>while loop: Χρησιμοποιείται για την επανάληψη κώδικα όσο μια συνθήκη είναι αληθής.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let num = 0;
+        <p><code>while</code> loop: Χρησιμοποιείται για την επανάληψη κώδικα όσο μια συνθήκη είναι αληθής.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let num = 0;
 while (num < 5) {
-    console.log(num);
-    num++;
+console.log(num);
+num++;
 }</code></pre></div></div>
 
-                    <h3 class="highlight">Συναρτήσεις</h3>
-                    <p>function: Χρησιμοποιείται για τον ορισμό και την κλήση συναρτήσεων.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">function greet(name) {
-    console.log(`Καλημέρα, ${name}!`);
+        <p class="highlight">Συναρτήσεις</p>
+        <p><code>function</code> Χρησιμοποιείται για τον ορισμό και την κλήση συναρτήσεων.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">function greet(name) {
+console.log(`Καλημέρα, ${name}!`);
 }
 greet("ΓΙΩΡΓΟΣ");</code></pre></div></div>
 
-                    <h3 class="highlight">Array</h3>
-                    <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση πινάκων.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let colors = ["Κόκκινο", "Πράσινο", "Μπλε"];
+        <p class="highlight">Array</p>
+        <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση πινάκων.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let colors = ["Κόκκινο", "Πράσινο", "Μπλε"];
 console.log(colors[0]); // Κόκκινο</code></pre></div></div>
 
-                    <h3 class="highlight">Object</h3>
-                    <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση αντικειμένων με ιδιότητες.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let person = {
-    firstName: "Γιάννης",
-    age: 30
+        <p class="highlight">Object</p>
+        <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση αντικειμένων με ιδιότητες.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let person = {
+firstName: "Γιάννης",
+age: 30
 };
 
 let onoma = person.firstName;
@@ -79,27 +74,25 @@ let ilikia = person.age;
 console.log(onoma); // Γιάννης
 console.log(ilikia); // 30</code></pre></div></div>
 
-                    <h3 class="highlight">Promises</h3>
-                    <p>Χρησιμοποιούνται για τη διαχείριση ασύγχρονων εργασιών και την αντιμετώπιση των αποτελεσμάτων τους.</p>
-                    <div class="bg_preview">
-                    <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const fetchData = new Promise((resolve, reject) => {
-    // Κώδικας για τη λήψη δεδομένων από κάποια πηγή
-    if (dataReceived) {
-        resolve(data);
-    } else {
-        reject("Αποτυχία λήψης δεδομένων");
-    }
+        <p class="highlight">Promises</p>
+        <p>Χρησιμοποιούνται για τη διαχείριση ασύγχρονων εργασιών και την αντιμετώπιση των αποτελεσμάτων τους.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const fetchData = new Promise((resolve, reject) => {
+// Κώδικας για τη λήψη δεδομένων από κάποια πηγή
+if (dataReceived) {
+resolve(data);
+} else {
+reject("Αποτυχία λήψης δεδομένων");
+}
 });
 
 fetchData.then(data => {
-    console.log(data);
+console.log(data);
 }).catch(error => {
-    console.error(error);
+console.error(error);
 });</code></pre></div></div>
 
-                </div><!-- Τέλος Background Κειμένου-->
-            </div> <!--Τέλος Κειμένου-->
-        </div> <!--Τέλος container-->
-        <footer id="addFooter"></footer> <!-- Footer -->
-    </body>
+    </div>
+    <div id="addFooter"></div>
+</body>
 </html>
