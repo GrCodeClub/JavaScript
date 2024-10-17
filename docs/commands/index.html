@@ -9,6 +9,23 @@
     <div id="addHeader"></div>
     <div class="container">
         <h1 class="title">Εντολές</h1>
+        <p class="highlight">Τύποι Δεδομένων</p>
+        <ol>
+            <li>String: Κείμενο</li>
+            <li>Number: Αριθμοί</li>
+            <li>Boolean: true ή false</li>
+            <li>Array: Λίστες</li>
+            <li>Object: Σύνθετες δομές δεδομένων</li>
+        </ol>
+        <p class="highlight">Σχόλια</p>
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">// Αυτό είναι ένα μονογραμμή σχόλιο
+
+/*
+Αυτό είναι ένα
+πολυγραμμή σχόλιο
+*/
+</code></pre></div></div>
+            
         <p class="highlight">Mεταβλητές</p>
         <p><code>let</code> και <code>const</code>: Χρησιμοποιούνται για τον ορισμό μεταβλητών. Οι μεταβλητές που δηλώνονται με let μπορούν να αλλάξουν τιμή, ενώ οι μεταβλητές που δηλώνονται με const είναι σταθερές και δεν μπορούν να αλλάξουν τιμή.</p>
         <div class="bg_preview">
@@ -19,6 +36,26 @@ const PI = 3.14159;</code></pre></div></div>
         <p>Στην console του προγράμματος περιήγησης.</p>
         <div class="bg_preview">
         <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log("Hello, world!");</code></pre></div></div>
+
+        <p class="highlight">Μαθηματικές Εντολές</p>
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let a = 10;
+let b = 5;
+
+console.log(a + b); // Πρόσθεση
+console.log(a - b); // Αφαίρεση
+console.log(a * b); // Πολλαπλασιασμός
+console.log(a / b); // Διαίρεση
+console.log(a % b); // Υπόλοιπο (modulus)
+</code></pre></div></div>
+
+        <p class="highlight">Λογικές Εντολές</p>
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let a = true;
+let b = false;
+
+console.log(a && b); // AND
+console.log(a || b); // OR
+console.log(!a);      // NOT
+</code></pre></div></div>
 
         <p class="highlight">Συνθήκες</p>
         <p><code>if-else</code> Χρησιμοποιείται για τον έλεγχο της συνθήκης και την εκτέλεση κώδικα βάσει αυτής της συνθήκης.</p>
@@ -53,12 +90,6 @@ num++;
 console.log(`Καλημέρα, ${name}!`);
 }
 greet("ΓΙΩΡΓΟΣ");</code></pre></div></div>
-
-        <p class="highlight">Array</p>
-        <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση πινάκων.</p>
-        <div class="bg_preview">
-        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let colors = ["Κόκκινο", "Πράσινο", "Μπλε"];
-console.log(colors[0]); // Κόκκινο</code></pre></div></div>
 
         <p class="highlight">Object</p>
         <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση αντικειμένων με ιδιότητες.</p>
