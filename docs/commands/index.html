@@ -8,84 +8,124 @@
 <body>
     <div id="addHeader"></div>
     <div class="container">
-        <h1 class="title">Arrays</h1>
-        <p class="highlight">Δημιουργία Arrays</p>
-        <p>Μπορείς να δημιουργήσεις έναν πίνακα χρησιμοποιώντας αγκύλες <code>[]</code>.</p>
-        <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">// Δημιουργία ενός κενών πίνακα
-let emptyArray = [];
+        <h1 class="title">Εντολές</h1>
+        <p class="highlight">Τύποι Δεδομένων</p>
+        <ol>
+            <li>String: Κείμενο</li>
+            <li>Number: Αριθμοί</li>
+            <li>Boolean: true ή false</li>
+            <li>Array: Λίστες</li>
+            <li>Object: Σύνθετες δομές δεδομένων</li>
+        </ol>
+        <p class="highlight">Σχόλια</p>
+        <div class="bg_preview"> <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">// Αυτό είναι ένα μονογραμμή σχόλιο
 
-// Δημιουργία ενός πίνακα με μάρκες αυτοκινήτων
-let cars = ["Toyota", "Honda", "BMW"];</code></pre></div></div>
+/*
+Αυτό είναι ένα
+πολυγραμμή σχόλιο
+*/
+</code></pre></div></div>
+            
+        <p class="highlight">Mεταβλητές</p>
+        <p><code>let</code> και <code>const</code>: Χρησιμοποιούνται για τον ορισμό μεταβλητών. Οι μεταβλητές που δηλώνονται με let μπορούν να αλλάξουν τιμή, ενώ οι μεταβλητές που δηλώνονται με const είναι σταθερές και δεν μπορούν να αλλάξουν τιμή.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let count = 10;
+const PI = 3.14159;</code></pre></div></div>
 
-        <p class="highlight">Πρόσβαση σε Στοιχεία Πίνακα</p>
-        <p>Η πρόσβαση σε στοιχεία του πίνακα γίνεται με χρήση του index</p>
-        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log(cars[0]); // Εκτυπώνει: Toyota
-console.log(cars[1]); // Εκτυπώνει: Honda
-console.log(cars[2]); // Εκτυπώνει: BMW</code></pre></div></div>
+        <p class="highlight">Εκτύπωση Mηνυμάτων</p>
+        <p>Στην console του προγράμματος περιήγησης.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log("Hello, world!");</code></pre></div></div>
 
-        <p class="highlight">Μήκος του Πίνακα</p>
-        <p>Μπορείς να βρεις το μήκος (αριθμό στοιχείων) ενός πίνακα χρησιμοποιώντας την ιδιότητα <code>length</code>.</p>
-        <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">console.log(cars.length); // Εκτυπώνει: 3</code></pre></div></div>
+        <p class="highlight">Μαθηματικές Εντολές</p>
+        <div class="bg_preview">
+            <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let a = 10;
+let b = 5;
 
-        <p class="highlight">Προσθήκη Στοιχείων</p>
-        <p>Στο τέλος χρησιμοποιώντας την <code>push()</code></p>
-        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">cars.push("Mercedes");
-console.log(cars); // Εκτυπώνει: ["Toyota", "Honda", "BMW", "Mercedes"]</code></pre></div></div>
-        <p>Στην αρχή χρησιμοποιώντας την <code>unshift()</code></p>
-        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">cars.unshift("Ford");
-console.log(cars); // Εκτυπώνει: ["Ford", "Toyota", "Honda", "BMW", "Mercedes"]</code></pre></div></div>
-    
-        <p class="highlight">Αφαίρεση Στοιχείων</p>
-        <p>Από το τέλος χρησιμοποιώντας την <code>pop()</code></p>
-        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">cars.pop(); // Αφαιρεί το τελευταίο στοιχείο (Mercedes)
-console.log(cars); // Εκτυπώνει: ["Ford", "Toyota", "Honda", "BMW"]</code></pre></div></div>
-        <p>Από την αρχή χρησιμοποιώντας την <code>shift()</code></p>
-        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">cars.shift(); // Αφαιρεί το πρώτο στοιχείο (Ford)
-console.log(cars); // Εκτυπώνει: ["Toyota", "Honda", "BMW"]</code></pre></div></div>
+console.log(a + b); // Πρόσθεση
+console.log(a - b); // Αφαίρεση
+console.log(a * b); // Πολλαπλασιασμός
+console.log(a / b); // Διαίρεση
+console.log(a % b); // Υπόλοιπο (modulus)
+</code></pre></div></div>
 
-        <p class="highlight">Αναζήτηση Στοιχείων</p>
-        <p>Μπορείς να βρεις τη θέση ενός στοιχείου στον πίνακα χρησιμοποιώντας την <code>indexOf()</code>.</p>
-        <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">let index = cars.indexOf("Honda");
-if (index !== -1) {
-    console.log(`Η Honda βρίσκεται στη θέση: ${index}`); // Εκτυπώνει: Η Honda βρίσκεται στη θέση: 1
+        <p class="highlight">Λογικές Εντολές</p>
+        <div class="bg_preview">
+            <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let a = true;
+let b = false;
+
+console.log(a && b); // AND
+console.log(a || b); // OR
+console.log(!a);      // NOT
+</code></pre></div></div>
+
+        <p class="highlight">Συνθήκες</p>
+        <p><code>if-else</code> Χρησιμοποιείται για τον έλεγχο της συνθήκης και την εκτέλεση κώδικα βάσει αυτής της συνθήκης.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let age = 18;
+if (age >= 18) {
+console.log("Είστε ενήλικας.");
 } else {
-    console.log("Η Honda δεν βρέθηκε στον πίνακα.");
+console.log("Είστε ανήλικος.");
 }</code></pre></div></div>
 
-    <p class="highlight">Δημιουργία Αντιγράφων Πίνακα</p>
-    <p>Μπορείς να δημιουργήσεις έναν νέο πίνακα από ένα υπάρχοντα χρησιμοποιώντας την <code>slice()</code>.</p>
-    <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">let newcars = cars.slice(0, 2); // Παίρνει τα πρώτα 2 cars
-console.log(newcars); // Εκτυπώνει: ["Toyota", "Honda"]</code></pre></div></div>
 
-    <p class="highlight">Συνένωση Πινάκων</p>
-    <p>Μπορείς να συνενώσεις δύο ή περισσότερους πίνακες χρησιμοποιώντας την <code>concat()</code>.</p>
-    <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript"></code>let morecars = newcars.concat(["Nissan", "Mazda"]);
-console.log(morecars); // Εκτυπώνει: ["Toyota", "Honda", "Nissan", "Mazda"]</pre></div></div>
+        <p class="highlight">Επανάληψη </p>
+        <p><code>for</code> loop: Χρησιμοποιείται για την επανάληψη κώδικα συγκεκριμένο αριθμό φορών.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">for (let i = 0; i < 5; i++) {
+console.log(i);
+}</code></pre></div></div>
 
-    <p class="highlight">Επαναλήψεις σε Πίνακες</p>
-    <p>Μπορείς να χρησιμοποιήσεις τις μεθόδους <code>forEach()</code> και <code>map()</code> για να επαναλάβεις τα στοιχεία του πίνακα.</p>
-    <ol>
-        <li>forEach(): Εκτελεί μια συνάρτηση για κάθε στοιχείο του πίνακα.
-            <br>
-            <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">cars.forEach((car) => {
-    console.log(car);
+        <p><code>while</code> loop: Χρησιμοποιείται για την επανάληψη κώδικα όσο μια συνθήκη είναι αληθής.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let num = 0;
+while (num < 5) {
+console.log(num);
+num++;
+}</code></pre></div></div>
+
+        <p class="highlight">Συναρτήσεις</p>
+        <p><code>function</code> Χρησιμοποιείται για τον ορισμό και την κλήση συναρτήσεων.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">function greet(name) {
+console.log(`Καλημέρα, ${name}!`);
+}
+greet("ΓΙΩΡΓΟΣ");</code></pre></div></div>
+
+        <p class="highlight">Object</p>
+        <p>Χρησιμοποιείται για τη δημιουργία και διαχείριση αντικειμένων με ιδιότητες.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">let person = {
+firstName: "Γιάννης",
+age: 30
+};
+
+let onoma = person.firstName;
+let ilikia = person.age;
+
+console.log(onoma); // Γιάννης
+console.log(ilikia); // 30</code></pre></div></div>
+
+        <p class="highlight">Promises</p>
+        <p>Χρησιμοποιούνται για τη διαχείριση ασύγχρονων εργασιών και την αντιμετώπιση των αποτελεσμάτων τους.</p>
+        <div class="bg_preview">
+        <div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const fetchData = new Promise((resolve, reject) => {
+// Κώδικας για τη λήψη δεδομένων από κάποια πηγή
+if (dataReceived) {
+resolve(data);
+} else {
+reject("Αποτυχία λήψης δεδομένων");
+}
+});
+
+fetchData.then(data => {
+console.log(data);
+}).catch(error => {
+console.error(error);
 });</code></pre></div></div>
-        </li>
-        <li>map(): Δημιουργεί έναν νέο πίνακα με τα αποτελέσματα της εκτέλεσης μιας συνάρτησης σε κάθε στοιχείο του αρχικού πίνακα.
-            <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">let lengthcar = cars.map((car) => car.length);
-console.log(lengthcar); // Εκτυπώνει: [6, 5, 3]</code></pre></div></div>
 
-        </li>
-    </ol>
-
-
-
-
-
-
-
-
-</div>
+    </div>
     <div id="addFooter"></div>
 </body>
 </html>
