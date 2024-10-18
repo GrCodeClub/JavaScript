@@ -28,7 +28,53 @@
 
         <p class="highlight">Γεγονότα</p>
         <p>Γεγονός Κλικ</p>
+        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myButton').click(function() {
+    alert('Το κουμπί πατήθηκε!');
+});</code></pre></div></div>
         <p>Γεγονός Hover</p>
+        <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').hover(
+    function() {
+        $(this).css('background-color', 'yellow');
+    },
+    function() {
+        $(this).css('background-color', 'white');
+    }
+);</code></pre></div></div>
+
+    <p class="highlight">Εφέ</p>
+    <p>Απόκρυψη/Εμφάνιση</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').hide();
+$('#myDiv').show();</code></pre></div></div>
+    <p>Fade In/Out</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').fadeIn();
+$('#myDiv').fadeOut();</code></pre></div></div>
+
+    <p>Slide Up/Down</p>
+    <div class="bg_preview"><div class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').slideUp();
+$('#myDiv').slideDown();</code></pre></div></div>
+
+    <p class="highlight">AJAX</p>
+    <p>Το jQuery απλοποιεί τις Ajax αιτήσεις με τη μέθοδο <code>$.ajax()</code>.</p>
+    <p>Βασική Κλήση AJAX</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$.ajax({
+    url: 'https://api.example.com/data',
+    method: 'GET',
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(error) {
+        console.error('Σφάλμα:', error);
+    }
+});</code></pre></div></div>
+
+    <p class="highlight">Διαχείριση DOM</p>
+    <p>Μπορείτε να χειριστείτε το περιεχόμενο HTML με το jQuery πολύ εύκολα.</p>
+    <p>Αλλαγή Περιεχομένου</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').html('Νέο περιεχόμενο εδώ!');</code></pre></div></div>
+    <p>Προσθήκη Κλάσης</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').addClass('newClass');</code></pre></div></div>
+    <p>Αφαίρεση Κλάσης</p>
+    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">$('#myDiv').removeClass('oldClass');</code></pre></div></div>
     </div>
     <div id="addFooter"></div>
 </body>
